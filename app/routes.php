@@ -8,7 +8,7 @@ function routesInDirectory($app = '') {
     $iterator->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);
 
     foreach($iterator as $route) {
-        $isDotFile = strpos($route->getFilename());
+        $isDotFile = strpos($route->getFilename(), '.') === 0;
 
         if (!$isDotFile && !$route->isDir()) {
             require $routeDir . $route->getFilename();
