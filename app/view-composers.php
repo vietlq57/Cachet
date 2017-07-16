@@ -2,12 +2,13 @@
 
     View::composer('index', function($view) {
        $date = date('Y-m-d');
-       $incident = Incident::whereRaw('DATE(created_at) = "' . $date . '"')
+
+       $incidents = Incident::whereRaw('DATE(created_at) = "' . $date . '"')
                         ->groupBy('status')
                         ->orderBy('status', 'desc')
                         ->first();
 
-       if ((int) $incident->status === 4) {
+       if ($incidents->count() === 0 || (int) $incidents->first->status === 4) {
            $status = 'success';
            $message = 'All systems are functional.';
        } else {
