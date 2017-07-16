@@ -8,7 +8,7 @@
                         ->orderBy('status', 'desc')
                         ->first();
 
-       if ($incidents->count() === 0 || (int) $incidents->first->status === 4) {
+       if ($incidents->get()->count() === 1 || (int) $incidents->first->status === 4) {
            $status = 'success';
            $message = 'All systems are functional.';
        } else {
