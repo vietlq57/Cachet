@@ -12,7 +12,7 @@
            $status = 'success';
            $message = 'All systems are functional.';
        } else {
-           $status = 'error';
+           $status = 'danger';
            $message = 'Some systems are experiencing issues.';
        }
 
