@@ -1,17 +1,20 @@
 <?php
 
-routesInDirectory();
+    Route::model('incident', 'Incident');
+    Route::model('component', 'Component');
 
-function routesInDirectory($app = '') {
-    $routeDir = app_path('routes/' . $app . ($app !== '' ? '/' : NULL));
-    $iterator = new RecursiveDirectoryIterator($routeDir);
-    $iterator->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);
+    routesInDirectory();
 
-    foreach($iterator as $route) {
-        $isDotFile = strpos($route->getFilename(), '.') === 0;
+    function routesInDirectory($app = '') {
+        $routeDir = app_path('routes/' . $app . ($app !== '' ? '/' : NULL));
+        $iterator = new RecursiveDirectoryIterator($routeDir);
+        $iterator->setFlags(RecursiveDirectoryIterator::SKIP_DOTS);
 
-        if (!$isDotFile && !$route->isDir()) {
-            require $routeDir . $route->getFilename();
+        foreach($iterator as $route) {
+            $isDotFile = strpos($route->getFilename(), '.') === 0;
+
+            if (!$isDotFile && !$route->isDir()) {
+                require $routeDir . $route->getFilename();
+            }
         }
     }
-}
