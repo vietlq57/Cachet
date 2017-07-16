@@ -11,7 +11,7 @@
 @foreach($incidents as $incident)
 <h3>{{ $incident->name }}, <span class="label {{ $incident->labelColor }}">{{ $incident->humanStatus }}</span></h3>
 <p>{{ $incident->message }}</p>
-<h4><time>{{ $incident->created_at->format('H:i:s A') }} {{ Config::get('app.timezone') }}</time></h4>
+<h4><small><time>{{ $incident->created_at->format('H:i:s A') }} {{ Config::get('app.timezone') }}</time></small></h4>
 @endforeach
 @endif
 </ul>
