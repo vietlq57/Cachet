@@ -27,7 +27,7 @@
                 case 1:
                     return 'glyphicon-flag';
                 case 2:
-                    return 'glyphicon-certificate';
+                    return 'glyphicon-warning-sign';
                 case 3:
                     return 'glyphicon-eye-open';
                 case 4:
