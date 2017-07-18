@@ -11,9 +11,13 @@ Cachet is an open source PHP status page system using the Laravel framework.
 ## Installation
 
 See [INSTALL.md](/INSTALL.md)
+
 ## Current Features
 
 - Uses SQLite/MySQL.
+- Report statuses on:
+    + Incidents
+    + Components
 - Uses Bootstrap 3 for a easy to modify, smooth layout.
 
 ## Goals
@@ -29,11 +33,11 @@ See [INSTALL.md](/INSTALL.md)
     - [ ] Create new incidents.
     - [ ] Add components.
     - [ ] Report on components.
-    - [ ] Connect to third-party services.
 - [ ] Third party integration:
     - [ ] Connect to third-party services and auto report using the API.
     - [ ] Add components via third-party sources.
-    
+- [ ] Heroku Button Support [#5](/jbrooksuk/Cachet/issues/5)
+
 # License
 
 [MIT license](http://jbrooksuk.mit-license.org)
