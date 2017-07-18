@@ -1,5 +1,5 @@
 <?php
-    $dbURL = parseurl(getenv('CLEARDB_DATABASE_URL'));
+    $dbURL = parse_url(getenv('CLEARDB_DATABASE_URL'));
     $dbName = substr($dbURL["path"], 1);
 
     return array(
